@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EA21ED3C1E38A2E400A98F70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21ED3B1E38A2E400A98F70 /* AppDelegate.swift */; };
-		EA21ED3E1E38A2E400A98F70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21ED3D1E38A2E400A98F70 /* ViewController.swift */; };
 		EA21ED411E38A2E400A98F70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA21ED3F1E38A2E400A98F70 /* Main.storyboard */; };
 		EA21ED441E38A2E400A98F70 /* ListYourDreams.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA21ED421E38A2E400A98F70 /* ListYourDreams.xcdatamodeld */; };
 		EA21ED461E38A2E400A98F70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA21ED451E38A2E400A98F70 /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		EA21ED381E38A2E400A98F70 /* ListYourDreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListYourDreams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA21ED3B1E38A2E400A98F70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA21ED3D1E38A2E400A98F70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EA21ED401E38A2E400A98F70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA21ED431E38A2E400A98F70 /* ListYourDreams.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListYourDreams.xcdatamodel; sourceTree = "<group>"; };
 		EA21ED451E38A2E400A98F70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				EA21ED3B1E38A2E400A98F70 /* AppDelegate.swift */,
-				EA21ED3D1E38A2E400A98F70 /* ViewController.swift */,
 				EA21ED3F1E38A2E400A98F70 /* Main.storyboard */,
 				EA21ED451E38A2E400A98F70 /* Assets.xcassets */,
 				EA21ED471E38A2E400A98F70 /* LaunchScreen.storyboard */,
@@ -140,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA21ED3E1E38A2E400A98F70 /* ViewController.swift in Sources */,
 				EA21ED441E38A2E400A98F70 /* ListYourDreams.xcdatamodeld in Sources */,
 				EA21ED3C1E38A2E400A98F70 /* AppDelegate.swift in Sources */,
 			);
@@ -308,6 +304,7 @@
 				EA21ED4F1E38A2E400A98F70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
