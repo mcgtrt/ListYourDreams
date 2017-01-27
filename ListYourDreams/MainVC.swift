@@ -23,12 +23,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     override func viewDidLoad() {
         tableView.delegate = self
         tableView.dataSource = self
-        generateTestData()
-        attemptFetch()
+        //generateTestData()
+        fetchItemList()
     }
     
     //MARK: - Functions
-    func attemptFetch() {
+    func fetchItemList() {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         fetchRequest.sortDescriptors = [dateSort]
@@ -49,6 +49,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         item.title = "New MacBook Pro late 2016"
         item.price = 12000
         item.details = "Nowy MacBook Pro z końca 2016 z paskiem touchBar daje genialne możliwości!"
+        appDelegate.saveContext()
     }
     
     func configureCell(cell: ItemCell, indexPath: IndexPath) {
@@ -118,5 +119,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.isSelected = false
+        }
     }
 }
