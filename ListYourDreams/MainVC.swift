@@ -13,6 +13,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
 
     //MARK: - Constants and variables
     let reusableCellIdentifier = "itemCell"
+    let editItemSegue = "editItemSegue"
     var controller = NSFetchedResultsController<Item>()
     
     //MARK: - Outlets
@@ -23,17 +24,34 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     override func viewDidLoad() {
         tableView.delegate = self
         tableView.dataSource = self
-        //generateTestData()
+        //createTestData()
         fetchItemList()
     }
+    
+    //MARK: - Actions
+    @IBAction func segmentChanged(_ sender: Any) {
+        fetchItemList()
+        tableView.reloadData()
+    }
+    
     
     //MARK: - Functions
     func fetchItemList() {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
-        fetchRequest.sortDescriptors = [dateSort]
+        let priceSort = NSSortDescriptor(key: "price", ascending: true)
+        let titleSort = NSSortDescriptor(key: "title", ascending: true)
+        
+        if segmentedControl.selectedSegmentIndex == 0 {
+            fetchRequest.sortDescriptors = [dateSort]
+        } else if segmentedControl.selectedSegmentIndex == 1 {
+            fetchRequest.sortDescriptors = [priceSort]
+        } else if segmentedControl.selectedSegmentIndex == 2 {
+            fetchRequest.sortDescriptors = [titleSort]
+        }
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        controller.delegate = self
         self.controller = controller
         
         do {
@@ -44,17 +62,28 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
         
     }
-    func generateTestData() {
+    func createTestData() {
         let item = Item(context: context)
-        item.title = "New MacBook Pro late 2016"
+        item.title = "MacBook Pro late 2016"
         item.price = 12000
-        item.details = "Nowy MacBook Pro z końca 2016 z paskiem touchBar daje genialne możliwości!"
+        item.details = "New MacBook Pro 2016 with the touchBar!"
         appDelegate.saveContext()
     }
     
     func configureCell(cell: ItemCell, indexPath: IndexPath) {
         let item = controller.object(at: indexPath)
         cell.configureCell(item: item)
+    }
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == editItemSegue {
+            if let controller = segue.destination as? NewItemVC {
+                if let item = sender as? Item {
+                    controller.itemToEdit = item
+                }
+            }
+        }
     }
     
     //MARK: - CoreData functions
@@ -117,13 +146,14 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.isSelected = false
+        }
+        
+        if let objects = controller.fetchedObjects, objects.count > 0 {
+            let item = objects[indexPath.row]
+            performSegue(withIdentifier: editItemSegue, sender: item)
         }
     }
 }

@@ -10,7 +10,6 @@
 		EA14CCD71E3A139F0059ACC6 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14CCD61E3A139F0059ACC6 /* UIViewExtensions.swift */; };
 		EA14CCDB1E3A1CC80059ACC6 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14CCDA1E3A1CC80059ACC6 /* ItemCell.swift */; };
 		EA14CCDD1E3A6C7F0059ACC6 /* NewItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14CCDC1E3A6C7F0059ACC6 /* NewItemVC.swift */; };
-		EA14CCDF1E3A6ED80059ACC6 /* NewShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14CCDE1E3A6ED80059ACC6 /* NewShopVC.swift */; };
 		EA21ED3C1E38A2E400A98F70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21ED3B1E38A2E400A98F70 /* AppDelegate.swift */; };
 		EA21ED411E38A2E400A98F70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA21ED3F1E38A2E400A98F70 /* Main.storyboard */; };
 		EA21ED441E38A2E400A98F70 /* ListYourDreams.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA21ED421E38A2E400A98F70 /* ListYourDreams.xcdatamodeld */; };
@@ -23,7 +22,6 @@
 		EA14CCD61E3A139F0059ACC6 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		EA14CCDA1E3A1CC80059ACC6 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		EA14CCDC1E3A6C7F0059ACC6 /* NewItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemVC.swift; sourceTree = "<group>"; };
-		EA14CCDE1E3A6ED80059ACC6 /* NewShopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewShopVC.swift; sourceTree = "<group>"; };
 		EA21ED381E38A2E400A98F70 /* ListYourDreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListYourDreams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA21ED3B1E38A2E400A98F70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA21ED401E38A2E400A98F70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 			children = (
 				EA21ED501E3919BD00A98F70 /* MainVC.swift */,
 				EA14CCDC1E3A6C7F0059ACC6 /* NewItemVC.swift */,
-				EA14CCDE1E3A6ED80059ACC6 /* NewShopVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -178,7 +175,6 @@
 			files = (
 				EA21ED441E38A2E400A98F70 /* ListYourDreams.xcdatamodeld in Sources */,
 				EA21ED511E3919BD00A98F70 /* MainVC.swift in Sources */,
-				EA14CCDF1E3A6ED80059ACC6 /* NewShopVC.swift in Sources */,
 				EA14CCD71E3A139F0059ACC6 /* UIViewExtensions.swift in Sources */,
 				EA21ED3C1E38A2E400A98F70 /* AppDelegate.swift in Sources */,
 				EA14CCDD1E3A6C7F0059ACC6 /* NewItemVC.swift in Sources */,
@@ -307,7 +303,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4BVAVX4E5Z;
 				INFOPLIST_FILE = ListYourDreams/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcgtrt.ListYourDreams;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -321,7 +317,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4BVAVX4E5Z;
 				INFOPLIST_FILE = ListYourDreams/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcgtrt.ListYourDreams;
 				PRODUCT_NAME = "$(TARGET_NAME)";
